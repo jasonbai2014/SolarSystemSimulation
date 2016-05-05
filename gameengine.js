@@ -11,7 +11,6 @@ window.requestAnimFrame = (function () {
 
 function GameEngine() {
     this.entities = [];
-    this.newAsteroid = [];
     this.ctx = null;
     this.surfaceWidth = null;
     this.surfaceHeight = null;
@@ -51,10 +50,6 @@ GameEngine.prototype.draw = function () {
 
 GameEngine.prototype.update = function () {
     this.entities[0].update();
-
-    for (var i = 0; i < this.newAsteroid.length; i++) {
-        this.entities.push(this.newAsteroid.splice(i, 1)[0]);
-    }
 
     for (var i = 1; i < this.entities.length; i++) {
         if (this.entities[i].removeFromWorld) {

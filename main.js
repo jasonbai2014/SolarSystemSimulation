@@ -13,10 +13,10 @@ AM.downloadAll(function () {
     // Asteroid(game, density, radius, velocity, x, y)
     //gameEngine.addEntity(new Asteroid(gameEngine, 10, 3, 6, {x:0.5, y:0.5}, 600, 400 , false));
     for (var i = 0; i < 1000; i++) {
-        var density = Math.random()* 100000;
+        var density = Math.random()* 10000000000;
         var radius = Math.random() * 3 + 1;
-        var x = Math.random() * 1000 + 300;
-        var y = Math.random() * 1000 + 100;
+        var x = Math.random() * 800 + 400;
+        var y = Math.random() * 800 + 200;
         var sun = gameEngine.entities[0];
         var dist = distance(sun, {x:x, y:y});
         var diffX = sun.x - x;

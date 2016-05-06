@@ -9,11 +9,11 @@ AM.downloadAll(function () {
     var gameEngine = new GameEngine();
     gameEngine.init(ctx);
 
-    gameEngine.addEntity(new Sun(gameEngine, 5000000000000, 18, 600, 500));
+    gameEngine.addEntity(new Sun(gameEngine, 3000000000000, 18, 600, 500));
 
     for (var i = 0; i < 1000; i++) {
         var density = Math.random()* 10000000000;
-        var radius = Math.random() * 3 + 1;
+        var radius = Math.random() * 2 + 1;
         var x = Math.random() * 800 + 200;
         var y = Math.random() * 800 + 100;
         var sun = gameEngine.entities[0];

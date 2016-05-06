@@ -51,7 +51,7 @@ Asteroid.prototype.update = function () {
         if (this !== ent && !ent.removeFromWorld) {
             if (!(ent instanceof Sun) && isCollided(this, ent)) { // if two asteroids collide
                 var newMass = this.mass + ent.mass;
-                var newDensity = (this.density + ent.density) / 2;
+                var newDensity = (this.density + ent.density) / 2 + 5000000;
                 var newRadius = calculateRadius(newMass, newDensity);
                 var newVelocity = {x: 0, y: 0};
                 newVelocity.x = (this.velocity.x * this.mass + ent.velocity.x * ent.mass) / newMass;
@@ -59,7 +59,7 @@ Asteroid.prototype.update = function () {
                 var newX = this.mass > ent.mass ? this.x : ent.x;
                 var newY = this.mass > ent.mass ? this.y : ent.y;
 
-                if (newMass > 60000000000 && newRadius > 6) {
+                if (newMass > 2500000000000) {
                     this.game.entities.push(new Planet(this.game, newDensity, newRadius, newVelocity, newX, newY));
                 } else {
                     this.game.entities.push(new Asteroid(this.game, newDensity, newRadius, newVelocity, newX, newY));

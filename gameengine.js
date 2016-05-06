@@ -14,6 +14,8 @@ function GameEngine() {
     this.ctx = null;
     this.surfaceWidth = null;
     this.surfaceHeight = null;
+    this.drawOrbitals = false;
+    this.removeOrbitals = false;
 }
 
 GameEngine.prototype.init = function (ctx) {

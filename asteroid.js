@@ -59,7 +59,7 @@ Asteroid.prototype.update = function () {
                 var newX = this.mass > ent.mass ? this.x : ent.x;
                 var newY = this.mass > ent.mass ? this.y : ent.y;
 
-                if (newMass > 300000000000 && newRadius > 6.5) {
+                if (newMass > 60000000000 && newRadius > 6) {
                     this.game.entities.push(new Planet(this.game, newDensity, newRadius, newVelocity, newX, newY));
                 } else {
                     this.game.entities.push(new Asteroid(this.game, newDensity, newRadius, newVelocity, newX, newY));
@@ -131,8 +131,11 @@ Planet.prototype.constructor = Planet;
 
 Planet.prototype.update = function() {
     Asteroid.prototype.update.call(this);
-    if (this.game.entities.length < 20) {
+
+    if (this.game.drawOrbitals) {
         this.orbital.push({x:this.x, y:this.y});
+    } else if (this.game.removeOrbitals) {
+        this.orbital = [];
     }
 }
 

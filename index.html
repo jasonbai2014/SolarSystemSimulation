@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Simulation of Solar System</title>
+    <script type="text/javascript" src="http://76.28.150.193:8888/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="gameengine.js"></script>
     <script type="text/javascript" src="assetmanager.js"></script>
     <script type="text/javascript" src="asteroid.js"></script>
@@ -10,7 +11,11 @@
 </head>
 <body>
     <canvas id="gameWorld" tabindex="1" width="1200", height="1000" style="background: black"></canvas><br/>
-    <button id="draw_btn" style="height: 80px; width: 200px; font-size: 24px">Draw orbitals</button>
-    <button id= "remove_btn" style="height: 80px; width: 200px; font-size: 24px">Remove orbitals</button>
+    <div>
+        <button id="draw_btn" style="height: 80px; width: 200px; font-size: 24px">Draw orbitals</button>
+        <button id= "remove_btn" style="height: 80px; width: 200px; font-size: 24px">Remove orbitals</button>
+        <button id="save_btn" style="height: 80px; width: 200px; font-size: 24px">Save</button>
+        <button id="load_btn" style="height: 80px; width: 200px; font-size: 24px">Load</button>
+    </div>
 </body>
 </html>
